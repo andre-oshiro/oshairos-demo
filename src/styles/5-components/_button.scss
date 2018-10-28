@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+.button {
+  @include respond-to(small) {
+  }
+}

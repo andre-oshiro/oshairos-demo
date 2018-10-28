@@ -1,0 +1,38 @@
+/**
+  URLEncode
+  @param {String} $string - Initial string
+  @return {String} - URLEncode string
+*/
+$encoding-references: (
+  ('%', '%25'),
+  (';', '%3B'),
+  (',', '%2C'),
+  ('/', '%2F'),
+  ('?', '%3F'),
+  (':', '%3A'),
+  ('@', '%40'),
+  ('&', '%26'),
+  ('=', '%3D'),
+  ('+', '%2B'),
+  ('$', '%24'),
+  ('!', '%21'),
+  ('~', '%7E'),
+  ('*', '%2A'),
+  ('"', '%22'),
+  ('(', '%28'),
+  (')', '%29'),
+  ('{', '%7B'),
+  ('}', '%7D'),
+  ('[', '%5B'),
+  (']', '%5D'),
+  ('<', '%3C'),
+  ('>', '%3E'),
+  ('#', '%23'),
+  ('^', '%5E')
+);
+@function url-encode($string) {
+  @each $encode in $encoding-references {
+    $string: replace($string, nth($encode, 1), nth($encode, 2));
+  }
+  @return $string;
+}

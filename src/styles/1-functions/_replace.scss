@@ -1,0 +1,20 @@
+/**
+  Replace $substring with $replacement in $string
+  @param {String} $string - Initial string
+  @param {String} $substring - Substring to replace
+  @param {String} $replacement - New value
+  @return {String} - Replaced string
+*/
+@function replace($string, $substring, $replacement: '') {
+  $index: str-index($string, $substring);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replacement +
+      replace(
+        str-slice($string, $index + str-length($substring)),
+        $substring,
+        $replacement
+      );
+  }
+  @return $string;
+}
