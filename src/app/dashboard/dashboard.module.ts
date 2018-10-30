@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,8 +17,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    SharedModule
   ],
   declarations: [DashboardComponent]
 })
-export class DashboardModule { }
+export class DashboardModule {}

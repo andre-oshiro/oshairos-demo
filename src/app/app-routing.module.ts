@@ -13,6 +13,16 @@ const routes: Routes = [
     path: 'dashboard',
     component: NavigationComponent,
     loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'sample-chart',
+    component: NavigationComponent,
+    loadChildren: './sample-chart/sample-chart.module#SampleChartModule'
+  },
+  {
+    path: 'sample3d',
+    component: NavigationComponent,
+    loadChildren: './sample3d/sample3d.module#Sample3dModule'
   }
 ];
 
